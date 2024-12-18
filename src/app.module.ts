@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientModule } from './client/client.module';
@@ -15,9 +15,45 @@ import { LoanModule } from './repayment/loan/loan.module';
 import { TransactionModule } from './transaction/transaction.module';
 import { EmployerModule } from './employer/employer.module';
 import { UserModule } from './user/user.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import config from './app.config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
+console.log(config), 'I am getting to the config variable';
+
+@Global()
 @Module({
-  imports: [ClientModule, UserModule, LoanModule, EmployerModule, TransactionModule, LoanRepaymentModule, EmployerDumpModule, UserAccessModule, CollectionModule, CollectionMethodModule, DisbursementModule, DisbursementMethodModule, ApplicationLogModule, RequestLogModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true, load: [config] }),
+    /* TypeOrmModule.forRootAsync({
+      useFactory: (config: ConfigService) => config.get('db.pgsql'),
+      inject: [ConfigService],
+    }), */
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5431,
+      database: 'payroll-loan-api',
+      username: 'lanre',
+      password: '',
+      synchronize: true,
+      autoLoadEntities: true,
+    }),
+    ClientModule,
+    UserModule,
+    LoanModule,
+    EmployerModule,
+    TransactionModule,
+    LoanRepaymentModule,
+    EmployerDumpModule,
+    UserAccessModule,
+    CollectionModule,
+    CollectionMethodModule,
+    DisbursementModule,
+    DisbursementMethodModule,
+    ApplicationLogModule,
+    RequestLogModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
