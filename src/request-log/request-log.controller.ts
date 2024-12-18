@@ -22,7 +22,7 @@ export class RequestLogController {
     return this.requestLogService.findOne(+id);
   }
 
-  @Patch(':id')
+  /* @Patch(':id')
   update(@Param('id') id: string, @Body() updateRequestLogDto: UpdateRequestLogDto) {
     return this.requestLogService.update(+id, updateRequestLogDto);
   }
@@ -30,5 +30,5 @@ export class RequestLogController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.requestLogService.remove(+id);
-  }
+  } */
 }

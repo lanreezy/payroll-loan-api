@@ -22,7 +22,7 @@ export class UserAccessController {
     return this.userAccessService.findOne(+id);
   }
 
-  @Patch(':id')
+  /* @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserAccessDto: UpdateUserAccessDto) {
     return this.userAccessService.update(+id, updateUserAccessDto);
   }
@@ -30,5 +30,5 @@ export class UserAccessController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.userAccessService.remove(+id);
-  }
+  } */
 }

@@ -22,7 +22,7 @@ export class ApplicationLogController {
     return this.applicationLogService.findOne(+id);
   }
 
-  @Patch(':id')
+  /* @Patch(':id')
   update(@Param('id') id: string, @Body() updateApplicationLogDto: UpdateApplicationLogDto) {
     return this.applicationLogService.update(+id, updateApplicationLogDto);
   }
@@ -30,5 +30,5 @@ export class ApplicationLogController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.applicationLogService.remove(+id);
-  }
+  } */
 }

@@ -22,7 +22,7 @@ export class LoanRepaymentController {
     return this.loanRepaymentService.findOne(+id);
   }
 
-  @Patch(':id')
+  /* @Patch(':id')
   update(@Param('id') id: string, @Body() updateLoanRepaymentDto: UpdateLoanRepaymentDto) {
     return this.loanRepaymentService.update(+id, updateLoanRepaymentDto);
   }
@@ -30,5 +30,5 @@ export class LoanRepaymentController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.loanRepaymentService.remove(+id);
-  }
+  } */
 }

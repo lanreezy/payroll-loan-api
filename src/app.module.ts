@@ -14,9 +14,7 @@ import { LoanRepaymentModule } from './loan-repayment/loan-repayment.module';
 import { LoanModule } from './repayment/loan/loan.module';
 import { TransactionModule } from './transaction/transaction.module';
 import { EmployerModule } from './employer/employer.module';
-import { LoanModule } from './loan/loan.module';
 import { UserModule } from './user/user.module';
-import { ClientModule } from './client/client.module';
 
 @Module({
   imports: [ClientModule, UserModule, LoanModule, EmployerModule, TransactionModule, LoanRepaymentModule, EmployerDumpModule, UserAccessModule, CollectionModule, CollectionMethodModule, DisbursementModule, DisbursementMethodModule, ApplicationLogModule, RequestLogModule],
