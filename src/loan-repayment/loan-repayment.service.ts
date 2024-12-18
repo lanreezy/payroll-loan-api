@@ -16,11 +16,11 @@ export class LoanRepaymentService {
     return `This action returns a #${id} loanRepayment`;
   }
 
-  update(id: number, updateLoanRepaymentDto: UpdateLoanRepaymentDto) {
+  /* update(id: number, updateLoanRepaymentDto: UpdateLoanRepaymentDto) {
     return `This action updates a #${id} loanRepayment`;
   }
 
   remove(id: number) {
     return `This action removes a #${id} loanRepayment`;
-  }
+  } */
 }

@@ -16,11 +16,11 @@ export class ApplicationLogService {
     return `This action returns a #${id} applicationLog`;
   }
 
-  update(id: number, updateApplicationLogDto: UpdateApplicationLogDto) {
-    return `This action updates a #${id} applicationLog`;
+  /* update(id: number, updateApplicationLogDto: UpdateApplicationLogDto) {
+    return `Not able to update an application log`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} applicationLog`;
-  }
+    return `Not able to remove an application log`;
+  } */
 }

@@ -16,11 +16,11 @@ export class UserAccessService {
     return `This action returns a #${id} userAccess`;
   }
 
-  update(id: number, updateUserAccessDto: UpdateUserAccessDto) {
+  /* update(id: number, updateUserAccessDto: UpdateUserAccessDto) {
     return `This action updates a #${id} userAccess`;
   }
 
   remove(id: number) {
     return `This action removes a #${id} userAccess`;
-  }
+  } */
 }

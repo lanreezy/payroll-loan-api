@@ -16,11 +16,11 @@ export class RequestLogService {
     return `This action returns a #${id} requestLog`;
   }
 
-  update(id: number, updateRequestLogDto: UpdateRequestLogDto) {
+  /* update(id: number, updateRequestLogDto: UpdateRequestLogDto) {
     return `This action updates a #${id} requestLog`;
   }
 
   remove(id: number) {
     return `This action removes a #${id} requestLog`;
-  }
+  } */
 }
