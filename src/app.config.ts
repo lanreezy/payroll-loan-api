@@ -21,7 +21,11 @@ const config = {
       entities: [`${__dirname}/**/*.entity{.ts,.js}`],
       migrations: [`${__dirname}/migrations/*{.ts,.js}`],
       cli: {},
-      ssl: {},
+      ssl: ['staging', 'production', 'test'].includes(env('NODE_ENV'))
+        ? {
+            ca: Buffer.from(process.env.DB_CA_CERT, 'base64').toString('ascii'),
+          }
+        : false,
     },
     redis: {
       host: env('REDIS_HOST', 'localhost'),

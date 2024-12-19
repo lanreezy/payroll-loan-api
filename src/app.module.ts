@@ -25,20 +25,20 @@ console.log(config), 'I am getting to the config variable';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, load: [config] }),
-    /* TypeOrmModule.forRootAsync({
+    TypeOrmModule.forRootAsync({
       useFactory: (config: ConfigService) => config.get('db.pgsql'),
       inject: [ConfigService],
-    }), */
-    TypeOrmModule.forRoot({
+    }),
+    /* TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5431,
+      port: 5432,
       database: 'payroll-loan-api',
-      username: 'lanre',
+      username: '',
       password: '',
       synchronize: true,
       autoLoadEntities: true,
-    }),
+    }), */
     ClientModule,
     UserModule,
     LoanModule,
